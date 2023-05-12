@@ -1,0 +1,20 @@
+#!/bin/bash
+vol=$(pamixer --get-volume)
+case $1 in
+	0)
+		if [ "$vol" -lt "200" ]
+		then
+			wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+			vol=$(pamixer --get-volume)
+			dunstify -r 9999 -h int:value:"$vol" "Volume: ${vol}%"
+		fi
+	;;
+	1)
+		if [ "$vol" -gt "0" ]
+		then
+			wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+			vol=$(pamixer --get-volume)
+			dunstify -r 9999 -h int:value:"$vol" "Volume: ${vol}%"
+		fi
+	;;
+esac

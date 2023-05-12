@@ -1,0 +1,9 @@
+#!/bin/sh
+case $1 in
+	install)
+		doas pacman -S $2
+	;;
+	remove)
+		doas pacman -Rsc $2
+	;;
+esac

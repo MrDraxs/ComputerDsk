@@ -1,0 +1,11 @@
+#!/bin/bash
+while true
+do
+vlck=$(pamixer --get-volume )
+if [ "$vlck" -gt "200" ]
+then
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 100%
+elif [ "$vlck" -lt "0" ]
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%
+fi
+done
