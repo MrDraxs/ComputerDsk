@@ -1,2 +1,0 @@
-#!/bin/bash
-dmenu_run -l 5 -nb '#000000' -nf '#00ffff' -sb '#00ffff' -sf '#000000'
