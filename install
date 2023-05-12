@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
+cp -r $PWD/.computer $HOME
 
-scripts=($(ls $PWD/scripts/*.sh))
-
-for sc in ${scripts[*]}; do
-  chmod +x $sc
-  b=${sc##*/}
-  echo "[moving $sc into /usr/local/bin as ${b%.*}]"
-  cp -r $sc /usr/local/bin/${b%.*}
-done
+echo "PATH=$PATH:$HOME/.computer/bin" >> $HOME/.zshrc
