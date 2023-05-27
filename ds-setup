@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
-cp -r $PWD/.computer $HOME
 
-echo "PATH=$PATH:$HOME/.computer/bin" >> $HOME/.zshrc
+if [ ! -d $HOME/.local ]; then
+  mkdir -p $HOME/.local;
+fi
+
+if [ ! -d $HOME/.locali/bin ]; then
+  mkdir -p $HOME/.local/bin;
+fi
+
+cp -r $PWD/.computer/bin/* $HOME/.local/bin
+
+cp -r $PWD/.computer/wallpaper $HOME/wallpaper
+
+echo "PATH=$PATH:$HOME/.computer/bin" >> $HOME/.zprofile
