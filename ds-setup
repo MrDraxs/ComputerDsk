@@ -1,15 +1,7 @@
 #!/usr/bin/env bash
 
-if [ ! -d $HOME/.local ]; then
-  mkdir -p $HOME/.local;
+if [ ! -d $HOME/.computer ]; then
+  mv $PWD/.computer $HOME/;
 fi
 
-if [ ! -d $HOME/.locali/bin ]; then
-  mkdir -p $HOME/.local/bin;
-fi
-
-cp -r $PWD/.computer/bin/* $HOME/.local/bin
-
-cp -r $PWD/.computer/wallpaper $HOME/wallpaper
-
-echo "PATH=$PATH:$HOME/.computer/bin" >> $HOME/.zprofile
+echo 'PATH=$PATH:$HOME/.computer/bin' >> $HOME/.bashrc
