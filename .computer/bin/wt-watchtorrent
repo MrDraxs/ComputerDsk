@@ -1,4 +1,0 @@
-#!/bin/bash
-mkdir $HOME/.wt
-webtorrent --mpv -o=$HOME/.wt "$1" &&
-rm -rf $HOME/.wt
