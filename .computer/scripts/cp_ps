@@ -1,0 +1,10 @@
+#!/bin/bash
+case $1 in
+	print)
+	maim | xclip -selection clipboard -t image/png
+	;;
+	select)
+	maim --select | xclip -selection clipboard -t image/png
+	;;
+esac
+mpg123 $HOME/.cp_sounds/screenshot.mp3
