@@ -1,5 +1,32 @@
 #!/usr/bin/env bash
 
+software= ( 'rofi' 'dunst' 'easyeffects' )
+
+for s in "${software[@]}"
+do
+doas pacman -S "$s";
+done
+
+if [ ! -d $HOME/.config ]; then
+  mkdir $HOME/.config;
+fi
+
+if [ ! -d $HOME/.config/dunst ]; then
+  mkdir $HOME/.config/dunst;
+fi
+
+if [ ! -f $HOME/.config/dunst/dunstrc ]; then
+  mv $PWD/config/dunstrc $HOME/.config/dunst/;
+fi
+
+if [ ! -d $HOME/.config/rofi ]; then
+  mkdir $HOME/.config/rofi;
+fi
+
+if [ ! -f $HOME/.config/rofi/config.rasi ]; then
+  mv $PWD/config/config.rasi $HOME/.config/rofi/;
+fi
+
 if [ ! -d $HOME/.computer ]; then
   mv $PWD/.computer $HOME/;
 fi
