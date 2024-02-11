@@ -1,6 +1,8 @@
 case $1 in
   add)
-doas pacman -S $2;;
+doas pacman -S $2
+;;
   del)
-doas pacman -S $2;;
+doas pacman -S $2
+;;
 esac
