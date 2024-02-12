@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-software= ( 'rofi' 'dunst' 'easyeffects' )
+software=( "rofi" "dunst" "easyeffects" )
 
 for s in "${software[@]}"
 do
@@ -31,4 +31,4 @@ if [ ! -d $HOME/.computer ]; then
   mv $PWD/.computer $HOME/;
 fi
 
-echo 'PATH=$PATH:$HOME/.computer/bin' >> $HOME/.bashrc
+echo 'PATH=$PATH:$HOME/.computer/scripts' >> $HOME/.bashrc
