@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-software=( "rofi" "dunst" "easyeffects" )
+software=( "vim" "mpv" "rofi" "dunst" "maim" "xclip" "easyeffects" )
 
 for s in "${software[@]}"
 do
@@ -27,8 +27,24 @@ if [ ! -f $HOME/.config/rofi/config.rasi ]; then
   mv $PWD/config/config.rasi $HOME/.config/rofi/;
 fi
 
+if [ ! -d $HOME/.config/mpv ]; then
+  mkdir $HOME/.config/mpv;
+fi
+
+if [ ! -f $HOME/.config/mpv/mpv.conf ]; then
+  echo 'fs=yes' > $HOME/.config/mpv/mpv.conf;
+fi
+
 if [ ! -d $HOME/.computer ]; then
   mv $PWD/.computer $HOME/;
 fi
 
-echo 'PATH=$PATH:$HOME/.computer/scripts' >> $HOME/.bashrc
+if [ ! -f $HOME/.xinitrc ]; then
+  mv $PWD/.xinitrc $HOME/;
+fi
+
+cd $PWD/dwm-flexipatch
+doas make clean install
+cd ..
+
+echo 'PATH=$PATH:$HOME/.computer/bin' >> $HOME/.bashrc
