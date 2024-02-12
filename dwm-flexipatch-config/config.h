@@ -854,10 +854,10 @@ static const char *xkb_layouts[]  = {
 #if !NODMENU_PATCH
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 #endif // NODMENU_PATCH
-static const char *dmenucmd[] = { "$HOME/.computer/scripts/cp_menu", NULL };
+static const char *dmenucmd[] = { "cp_menu", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *printscreen[]  = { "$HOME/.computer/scripts/cp_ps", "print" , NULL };
-static const char *selectprintscreen[]  = { "$HOME/.computer/scripts/cp_ps", "select" , NULL };
+static const char *printscreen[]  = { "cp_ps", "print" , NULL };
+static const char *selectprintscreen[]  = { "cp_ps", "select" , NULL };
 static const char *dunst1[]  = { "dunstify", "-t" , "1000" , "-r" , "9999" , "[1]" , NULL };
 static const char *dunst2[]  = { "dunstify", "-t" , "1000" , "-r" , "9999" ,"[2]" , NULL };
 static const char *dunst3[]  = { "dunstify", "-t" , "1000" ,  "-r" , "9999" ,"[3]" , NULL };
