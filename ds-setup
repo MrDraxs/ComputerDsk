@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-software=( "vim" "mpv" "rofi" "dunst" "maim" "xclip" "easyeffects" )
-
-for s in "${software[@]}"
-do
-doas pacman -S "$s";
-done
-
 if [ ! -d $HOME/.config ]; then
   mkdir $HOME/.config;
 fi
@@ -46,5 +39,7 @@ fi
 cd $PWD/dwm-flexipatch
 doas make clean install
 cd ..
+
+chmod +x $HOME/.computer/scripts/*
 
 echo 'PATH=$PATH:$HOME/.computer/bin' >> $HOME/.bashrc
