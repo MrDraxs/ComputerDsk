@@ -36,7 +36,11 @@ if [ ! -f $HOME/.xinitrc ]; then
   mv $PWD/.xinitrc $HOME/;
 fi
 
+git clone https://github.com/bakkeby/dwm-flexipatch.git
+
 cd $PWD/dwm-flexipatch
+mv $PWD/config/config.h $PWD/dwm-flexipatch
+mv $PWD/config/patches.h $PWD/dwm-flexipatch
 doas make clean install
 cd ..
 
