@@ -487,6 +487,12 @@ static const int tagrows = 2;
  * the patches you enable.
  */
 static const Rule rules[] = {
+	RULE(.class = "kitty", .tags = 1 << 0)
+	RULE(.class = "LibreWolf", .tags = 1 << 1)
+	RULE(.class = "krita", .tags = 1 << 2)
+	RULE(.class = "Inkscape", .tags = 1 << 2)
+	RULE(.class = "Gimp", .tags = 1 << 2)
+	RULE(.class = "mpv", .tags = 1 << 2)
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
@@ -497,8 +503,6 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
 	#elif SCRATCHPADS_PATCH
