@@ -1,14 +1,15 @@
-#tabbrowser-tabs,#urlbar-container, #TabsToolbar, #back-button, #forward-button {
+#back-button, #forward-button,#reload-button,#tabbrowser-tabs,#urlbar-container, #TabsToolbar, #back-button
+, #forward-button {
     visibility: collapse !important
 }
 
 #main-window:not([titlepreface*="+"])[chromehidden=""]:not([inDOMFullscreen="true"]){
   --top-margin: calc(var(--toolbar-item-hgt)) !important;
 }
-
 #nav-bar{
+visibility: collapse !important;
 position: fixed !important;
-right: 0; 
+right: 0;
 z-index: 1 !important;
 max-width: 115px !important;
 }
