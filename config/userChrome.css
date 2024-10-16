@@ -1,15 +1,18 @@
-#back-button, #forward-button,#reload-button,#tabbrowser-tabs,#urlbar-container, #TabsToolbar, #back-button
-, #forward-button {
-    visibility: collapse !important
+#nav-bar, #identity-box, #tabbrowser-tabs, #TabsToolbar {
+    position: fixed;
+    z-index: 0;
+    top: -20px !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 0 !important;
 }
 
-#main-window:not([titlepreface*="+"])[chromehidden=""]:not([inDOMFullscreen="true"]){
-  --top-margin: calc(var(--toolbar-item-hgt)) !important;
-}
-#nav-bar{
-visibility: collapse !important;
-position: fixed !important;
-right: 0;
-z-index: 1 !important;
-max-width: 115px !important;
+/* Ensure browser content fills the window */
+#browser {
+    position: fixed;
+    z-index: 0;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
 }
